@@ -6,7 +6,8 @@
     "stage": "react-static build --staging",
     "build": "react-static build",
     "analyze": "react-static build --analyze",
-    "serve": "serve dist -p 3000"
+    "serve": "serve dist -p 3000",
+    "deploy": "yarn run build && ./bin/deploy.sh"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
