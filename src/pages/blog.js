@@ -5,6 +5,7 @@ import { Link } from "components/Router";
 import MD from 'react-markdown';
 import CodeBlock from '../components/CodeBlock.jsx';
 import Pagenator from '../components/Pagenator.jsx';
+import LoadTwitterWidgets from '../lib/LoadTwitterWidgets'
 
 import styles from '../containers/Post.css';
 

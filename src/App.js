@@ -21,10 +21,11 @@ function App() {
         <meta property="og:title" content="moxus.org" />
         <meta property="og:url" content="https://moxus.org" />
         <meta property="og:type" content="website" />
-        <meta property="og:description" content="React Static Website" />
-        <meta property="og:image" content="http://some-react-static-website/img/OG_thumb.jpg" />
+        <meta property="og:description" content="moxus-org" />
+        <meta property="og:image" content="" />
         <link rel="stylesheet" type="text/css" href="/stylesheets/menu_btn.css"></link>
         <link rel="stylesheet" type="text/css" href="/stylesheets/monokai-sublime.css"></link>
+        <script src="/lib/LoadTwitterWidgets.js" defer />
       </Head>
       <Root>
         <nav>
