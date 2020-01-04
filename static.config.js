@@ -1,17 +1,28 @@
 import path from "path";
-import axios from "axios";
+import fs from 'fs';
+let yaml = require('front-matter');
+
+// import axios from "axios";
 
 import { makePageRoutes } from "react-static/node";
 
 export default {
   getRoutes: async () => {
-    const { data: posts } = await axios.get(
-      "https://jsonplaceholder.typicode.com/posts"
-    );
-
+    const posts = JSON.parse(fs.readFileSync('./public/data.json', 'utf8'));
+    const matters = posts.map(post => {
+      const p = fs.readFileSync('./public/posts/' + post.path, 'utf8');
+      const mat = yaml(p);
+      return {
+        id: post.path.split('.')[0],
+        title: mat.attributes.title,
+        path: post.path,
+        body: mat.body
+      }
+    })
+    
     return [
       ...makePageRoutes({
-        items: posts,
+        items: matters,
         pageSize: 5,
         pageToken: "page", // use page for the prefix, eg. blog/page/3
         route: {
@@ -28,17 +39,12 @@ export default {
           })
         })
       }),
-      // {
-      //   path: "/blog",
-      //   getData: () => ({
-      //     posts
-      //   }),
-      ...posts.map(post => ({
-        path: `/post/${post.id}`,
+      ...matters.map(post => ({
+        path: `/blog/post/${post.id}`,
         template: "src/containers/Post",
         getData: () => ({
           post
-        })
+        }) 
       }))
     ];
   },
@@ -50,6 +56,13 @@ export default {
       }
     ],
     require.resolve("react-static-plugin-reach-router"),
-    require.resolve("react-static-plugin-sitemap")
+    require.resolve("react-static-plugin-sitemap"),
+    [
+      require.resolve("react-static-plugin-css-modules"),
+      {
+         modules: true, // set true by default
+         localIdentName: '[name]__[local]--[hash:base64:5]',
+       }
+    ]
   ]
 };

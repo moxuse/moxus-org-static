@@ -1,0 +1,45 @@
+/**
+ * footer.css
+ */
+
+.footer {
+  margin: 0 auto;
+  max-width: 1440px;
+  height: 200px;
+  color: #888;
+}
+
+.footer div {
+  display: inline-flex;
+  margin-top: 20px;
+  margin-bottom: 120px;
+}
+
+.footerYear {
+  display: none;
+  margin-top: 12px;
+}
+
+.footer hr {
+  width: 100%;
+}
+
+.footer span {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+svg path {
+  fill: #919191;
+}
+
+.footer a:hover svg path {
+  fill: #333;
+}
+
+@media screen and (min-width:480px) { 
+  .footerYear {
+    display: block;
+  }
+}
+

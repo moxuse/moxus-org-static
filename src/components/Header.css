@@ -1,0 +1,33 @@
+/**
+ * header.css
+ */
+
+.header {
+  margin: 0 auto;
+  max-width: 1440px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.header .title {
+  color: #444444;
+  font-size: 20px;
+}
+
+.header .menu_btn_wrap {
+  z-index: 1000;
+  position: relative;
+  float: right;
+  right: 0%;
+  top: -78px;
+}
+
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    margin-top: 25px;
+  }
+}
