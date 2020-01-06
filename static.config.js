@@ -20,7 +20,20 @@ export default {
         body: mat.body
       }
     })
-    
+    const worksPosts = works.map(post => {
+      if (post.path) {
+        const p = fs.readFileSync('./public/posts/' + post.path, 'utf8');
+        const mat = yaml(p);
+        return {
+          id: post.path.split('.')[0],
+          title: mat.attributes.title,
+          path: post.path,
+          body: mat.body
+        }
+      }
+    }).filter(f=>{
+      return f != null
+    })
     return [
       // for /index
       ...[{
@@ -61,6 +74,14 @@ export default {
       // for pages under /blog/post/
       ...matters.map(post => ({
         path: `/blog/post/${post.id}`,
+        template: "src/containers/Post",
+        getData: () => ({
+          post
+        }) 
+      })),
+      // for work pages under /post
+      ...worksPosts.map(post => ({
+        path: `/post/${post.id}`,
         template: "src/containers/Post",
         getData: () => ({
           post
