@@ -7,6 +7,7 @@ let yaml = require('front-matter');
 import { makePageRoutes } from "react-static/node";
 
 export default {
+  siteRoot: 'https://moxus.org',
   getRoutes: async () => {
     const posts = JSON.parse(fs.readFileSync('./public/data.json', 'utf8'));
     const works = JSON.parse(fs.readFileSync('./public/project_data.json', 'utf8'));
