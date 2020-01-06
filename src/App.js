@@ -24,6 +24,7 @@ function App() {
         <link rel="stylesheet" type="text/css" href="/stylesheets/menu_btn.css"></link>
         <link rel="stylesheet" type="text/css" href="/stylesheets/monokai-sublime.css"></link>
         <script src="/lib/LoadTwitterWidgets.js" defer />
+        <script src="/lib/ga.js" defer />
       </Head>
       <Root>
         <nav>
