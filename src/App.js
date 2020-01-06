@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 import styles from "./app.css";
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
-addPrefetchExcludes(["work"]);
+// addPrefetchExcludes(["work"]);
 
 function App() {
   return (
@@ -34,7 +34,7 @@ function App() {
         <div className="content">
           <React.Suspense fallback={<em>Loading...</em>}>
             <Router>
-              <Work path="work" />
+              {/* <Work path="work" /> */}
               <Routes path="*" />
             </Router>
           </React.Suspense>

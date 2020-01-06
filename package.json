@@ -20,6 +20,7 @@
     "react": "^16.8.2",
     "react-addons-shallow-compare": "^15.6.2",
     "react-dom": "^16.8.2",
+    "react-flexbox-grid": "^2.1.2",
     "react-lowlight": "^2.0.0",
     "react-markdown": "^4.2.2",
     "react-static": "^7.0.0",

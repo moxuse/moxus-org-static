@@ -9,6 +9,7 @@ import { makePageRoutes } from "react-static/node";
 export default {
   getRoutes: async () => {
     const posts = JSON.parse(fs.readFileSync('./public/data.json', 'utf8'));
+    const works = JSON.parse(fs.readFileSync('./public/project_data.json', 'utf8'));
     const matters = posts.map(post => {
       const p = fs.readFileSync('./public/posts/' + post.path, 'utf8');
       const mat = yaml(p);
@@ -21,6 +22,16 @@ export default {
     })
     
     return [
+      // for /index
+      ...[{
+        path: "/",
+        template: "src/pages/index",
+        getData: () => ({
+          works,
+          matters
+        }) 
+      }],
+      // for pages under /blog/pages
       ...makePageRoutes({
         items: matters,
         pageSize: 5,
@@ -39,6 +50,15 @@ export default {
           })
         })
       }),
+      // form /works
+      ...[{
+        path: "work",
+        template: "src/containers/Work",
+        getData: () => ({
+          works
+        }) 
+      }],
+      // for pages under /blog/post/
       ...matters.map(post => ({
         path: `/blog/post/${post.id}`,
         template: "src/containers/Post",
