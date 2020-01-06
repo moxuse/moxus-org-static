@@ -1,8 +1,6 @@
 import React from "react";
 import { Root, Routes, Head, addPrefetchExcludes } from "react-static";
-//
 import { Link, Router } from "components/Router";
-import Work from "containers/Work";
 
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -34,7 +32,6 @@ function App() {
         <div className="content">
           <React.Suspense fallback={<em>Loading...</em>}>
             <Router>
-              {/* <Work path="work" /> */}
               <Routes path="*" />
             </Router>
           </React.Suspense>

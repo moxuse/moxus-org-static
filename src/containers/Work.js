@@ -1,20 +1,34 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
+import { Grid, Row } from 'react-flexbox-grid';
+import Thumbnail from '../components/Thumbnail.js'
+
+import styles from './Work.css';
 
 function Work() {
   const { works } = useRouteData()
-  const worksList = works.map(w => {
+
+  const makeGrid = () => {
+    let grid = [];
+    let col = [];
+    works.map((item, i) => {
+      col.push(<Thumbnail type="row" data={item} key={item.path}/>);
+      if (i % 3 === 2 || i === works.length - 1) {
+        grid.push(col);
+        col = [];
+      }
+    });
+    return grid;
+  }
+  const rows = makeGrid();
     return (
-      <li key={`w.path`+ Math.random()}>
-        <p>{w.path}</p>      
-      </li>)
-  })
-    return (
-      <div>
+      <div className={styles.work}>
         <h1>work</h1>
-        <ul>
-        {worksList}
-        </ul>
+        <Grid className={styles.grid}>
+          <Row>
+            {rows}
+          </Row>
+        </Grid>
       </div>
     )
 

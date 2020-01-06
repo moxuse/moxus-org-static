@@ -1,0 +1,24 @@
+/**
+ * work.css
+ */
+
+.work {
+  margin-bottom: 80px;
+}
+
+.work h1{
+  margin-top: 120px;
+  margin-bottom: 50px;
+}
+
+
+.grid {
+  width: 100%;
+}
+
+
+@media screen and (max-width: 480px) {
+  .work h1{
+    margin-bottom: 50px;
+  }
+}

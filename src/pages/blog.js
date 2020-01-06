@@ -3,9 +3,9 @@ import { useRouteData } from "react-static";
 //
 import { Link } from "components/Router";
 import MD from 'react-markdown';
+import { Head } from 'react-static';
 import CodeBlock from '../components/CodeBlock.jsx';
 import Pagenator from '../components/Pagenator.jsx';
-import LoadTwitterWidgets from '../lib/LoadTwitterWidgets'
 
 import styles from '../containers/Post.css';
 
@@ -15,6 +15,19 @@ export default function Blog() {
   const { posts, currentPage, totalPages } = useRouteData();
   return (
     <div>
+      <Head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <title>moxus.org</title>
+        <meta property="og:title" content="moxus.org" />
+        <meta property="og:url" content="https://moxus.org" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="moxus-org :: blog" />
+        <meta property="og:image" content="" />
+        <link rel="stylesheet" type="text/css" href="/stylesheets/menu_btn.css"></link>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/monokai-sublime.css"></link>
+        <script src="/lib/LoadTwitterWidgets.js" defer />
+      </Head>
       <h1>blog</h1>
       <ul>
         {posts.map(post => (
