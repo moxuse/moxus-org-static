@@ -1,3 +1,9 @@
-# React-Static - Basic Template
+static site for https://moxus.org
 
-To use this template, run `react-static create` and use the `basic` template.
+## make new post
+
+  `make post`
+
+## build
+
+  `make build`
