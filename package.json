@@ -15,7 +15,7 @@
     "flexboxgrid": "^6.3.1",
     "front-matter": "^3.0.2",
     "gsap": "^3.0.4",
-    "highlight.js": "^9.17.1",
+    "highlight.js": "^10.1.2",
     "normalize": "^0.3.1",
     "react": "^16.8.2",
     "react-addons-shallow-compare": "^15.6.2",
