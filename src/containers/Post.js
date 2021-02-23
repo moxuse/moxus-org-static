@@ -1,7 +1,6 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
-//
-import { Link } from 'components/Router'
+
 import MD from 'react-markdown';
 import CodeBlock from '../components/CodeBlock.jsx';
 

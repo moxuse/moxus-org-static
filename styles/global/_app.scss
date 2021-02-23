@@ -1,0 +1,98 @@
+/**
+ * app.css
+ */
+ @import "~flexboxgrid/dist/flexboxgrid.css";
+
+ body {
+   margin: 0;
+ }
+ 
+ a:link {
+   color: #444444;
+   text-decoration: none;
+ }
+ a:visited {
+   color: #444444;
+ }
+ a:hover {
+   color: #666666;
+   background: #def3c7;
+ }
+ a:active {
+   color: #444444;
+ }
+ 
+ ::selection {
+   background: #ffdcd6;
+ }
+ p {
+   word-wrap: break-word;
+ }
+ 
+ iframe {
+   max-width: 100%;
+ }
+ 
+ blockquote {
+   margin-left: 0;
+   padding: 0 1em;
+   color: #6a737d;
+   border-left: 0.25em solid #dfe2e5;
+ }
+ 
+ pre {
+   padding: 5px;
+   overflow: auto;
+   font-size: 85%;
+   line-height: 1.45em;
+   background-color: #23241f;
+   border-radius: 4px;
+ }
+ 
+ pre code {
+   line-height: 2em;
+ }
+ 
+ p code {
+   border-radius: 4px;
+   background: #888 !important;
+ }
+ 
+ .app {
+   font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean,
+     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   width: 80%;
+   margin: 0 auto;
+   max-width: 980px;
+ }
+ 
+ #root .subtitle {
+   font-size: 12px;
+ }
+ 
+ #root .subtitle h1 {
+   color: #444444;
+   margin-bottom: 50px;
+   margin-top: 120px;
+ }
+ 
+ .app .manu.menu__state--open {
+   display: block;
+ }
+ 
+ @media screen and (max-width: 768px) {
+   .app {
+     width: 87%;
+   }
+ }
+ 
+ @media screen and (max-width: 480px) {
+   .app {
+     width: 88%;
+   }
+ 
+   #root .subtitle h1 {
+     margin-bottom: 50px;
+   }
+ }
+ 

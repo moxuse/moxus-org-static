@@ -1,0 +1,77 @@
+@import '~compass-mixins/lib/compass/css3';
+
+$dark: #212121;
+$light: #efefef;
+$color: #b3e5fc;
+
+@mixin btn($left, $top) {
+  width: 30px;
+  height: 60px;
+  top: $top;
+  left: $left;
+  transition-duration: 0.3s;
+  transform: scale(1.25);
+}
+
+@mixin icon($height, $width) {
+  transition-duration: 0.3s;
+  position: absolute;
+  height: $height;
+  width: $width;
+  top: 30px;
+  background-color: $dark;
+}
+
+@mixin icon-before($height, $width, $top) {
+  transition-duration: 0.3s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $dark;
+  content: "";
+  top: $top;
+}
+
+@mixin icon-after($height, $width, $top) {
+  transition-duration: 0.3s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $dark;
+  content: "";
+  top: $top;
+}
+
+.btn12{
+  @include btn(0px, 0px);
+  
+  .icon {
+    @include icon(2px, 30px);
+    
+    &:before{
+      @include icon-before(2px, 30px, -10px);
+    }
+    
+    &:after{
+      @include icon-after(2px, 30px, 10px);
+    }
+  }
+  
+  &.open {
+    .icon {
+      transition-duration: 0.3s;
+      background: transparent;
+      
+      &:before{
+        transform: rotateZ(45deg) scaleX(1.25) translate(6.5px, 6.5px);
+      }
+
+      &:after{
+        transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+      }
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
