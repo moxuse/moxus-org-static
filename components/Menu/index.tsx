@@ -2,9 +2,9 @@
  * menu.jsx
  */
 import * as React from "react";
-import { useState, useRef, useEffect  } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from "next/link";
-import { TweenMax } from 'gsap';
+import { PlayState, Tween } from 'react-gsap';
 
 import { MenuContext } from "../../context/menu";
 
@@ -12,69 +12,39 @@ import styles from './styles.module.css';
 
 const Menu: React.FC = (props) => {
   const { state, setState } = React.useContext(MenuContext);
-  let menu = useRef(null);
-  const [visibiiity, setVisibility] = useState(false);
-  const [openAnimation, setOpenAnimation] = useState(null);
-  const [closeAnimation, closeFadeAnimation] = useState(null);
+  const [ playing, setPlaying ] = React.useState(false);
+  const [ visibiiity, setVisibility ] = useState(false);
+  const [ opacity, setOpacity ] = React.useState(0.0);
 
   const onClick = (): void => {
     setState('close');
   }
 
-  useEffect (() => {
-    setOpenAnimation(
-      TweenMax.to(menu, 0.6, {
-          opacity: 1,
-          ease: 'Power2.easeOut'
-        }).pause()
-    )
-  },[]);
-
-  useEffect (() => {
-    closeFadeAnimation(
-      TweenMax.to(menu, 0.6, {
-          opacity: 0,
-          ease: 'Power2.easeOut',
-          onComplete: () => {
-            setVisibility(false);
-          }
-        }).pause()
-    )
-  },[]);
-
   useEffect(() => {
-    let value = 0;
-    let onCompletion = undefined;
     if(state === 'open') {
       setVisibility(true);
-      value = 0.8
+      setOpacity(0.8);
     } else {
-      onCompletion = () => { setVisibility(false); }
-      value = 0;
-    }  
-    TweenMax.to(menu, 0.6, {
-      opacity: value,
-      ease: 'Power2.easeOut',
-      onComplete: onCompletion
-    }).play()
+      setTimeout(() => { setVisibility(false); }, 800);
+      setOpacity(0);
+    }
+    setPlaying(true);
   })
 
   const visibleStyle = (state === 'close' && !visibiiity) ? styles.hide : '';
 
   return (
-    <div className={`menu ${styles.menu} ${visibleStyle}`} ref={element => { menu = element }}>
-      <ul onClick={onClick}>
-        <li><Link href={`/`}>top</Link></li>
-        <li><a href={`https://github.com/moxuse/cv/blob/master/README.md`} target='blank'>cv</a></li>
-        <li><Link href={`/work`} >work</Link></li>
-        <li><Link href={`/blog`} id={1}>blog</Link></li>
-      </ul>
-    </div>
+    <Tween to={{ opacity: opacity }} duration={0.8} ease='power2.inout(1.7)' playState={playing ? PlayState.play : PlayState.pause} >
+      <div className={`menu ${styles.menu} ${visibleStyle}`} >
+        <ul onClick={onClick}>
+          <li><Link href={`/`}>top</Link></li>
+          <li><a href={`https://github.com/moxuse/cv/blob/master/README.md`} target='blank'>cv</a></li>
+          <li><Link href={`/work`} >work</Link></li>
+          <li><Link href={`/blog`} >blog</Link></li>
+        </ul>
+      </div>
+    </Tween>
   );
 }
 
 export default Menu;
-
-// Menu.defaultProps = {
-//   onClose: undefined
-// };

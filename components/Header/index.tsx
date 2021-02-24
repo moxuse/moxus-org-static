@@ -10,7 +10,7 @@ import styles from "./styles.module.css";
 const Header: React.FC = (props) => {
   const { state, setState } = React.useContext(MenuContext);
 
-  const onMenuClick = (e) => {
+  const onMenuClick = () => {
     setState(state === 'open' ? 'close' : 'open');
   };
 

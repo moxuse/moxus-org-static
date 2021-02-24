@@ -3,11 +3,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "buld": "next build",
+    "build": "next build",
     "start": "next start",
     "deploy": "yarn run build && ./bin/deploy.sh"
   },
   "dependencies": {
+    "@types/gsap": "^1.20.2",
     "axios": "^0.21.1",
     "flexboxgrid": "^6.3.1",
     "front-matter": "^3.0.2",
@@ -19,6 +20,7 @@
     "react-addons-shallow-compare": "^15.6.2",
     "react-dom": "^17.0.1",
     "react-flexbox-grid": "^2.1.2",
+    "react-gsap": "^2.2.1",
     "react-lowlight": "^2.0.0",
     "react-markdown": "^4.2.2"
   },

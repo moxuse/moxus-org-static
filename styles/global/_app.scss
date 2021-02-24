@@ -58,7 +58,7 @@
    background: #888 !important;
  }
  
- .app {
+ #__next {
    font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean,
      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
    width: 80%;
@@ -76,18 +76,18 @@
    margin-top: 120px;
  }
  
- .app .manu.menu__state--open {
+ #__next .manu.menu__state--open {
    display: block;
  }
  
  @media screen and (max-width: 768px) {
-   .app {
+  #__next {
      width: 87%;
    }
  }
  
  @media screen and (max-width: 480px) {
-   .app {
+  #__next {
      width: 88%;
    }
  

@@ -79,7 +79,7 @@ class Pagenator extends Component {
             </Link>
           </li>
           {iterator.map(function(page) {
-            const className = s.currentPage === page ? styles.active : '';2
+            const className = s.currentPage === page ? styles.active : '';
             const hiding = (page <= 0) ? styles.hiding : '';
             return (
               <li key={page}
