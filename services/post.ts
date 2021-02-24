@@ -11,7 +11,7 @@ export type PostProps = {
 }
 
 export const getPostContent = ({ params }: GetStaticPropsContext<any>): PostProps => {
-  const p = fs.readFileSync('./public/posts/' + params.date + '.md', 'utf8');
+  const p = fs.readFileSync('./contents/posts/' + params.date + '.md', 'utf8');
   const matter = yaml(p);
   console.log('each post', matter);
   return {
@@ -25,9 +25,9 @@ export const getPostContent = ({ params }: GetStaticPropsContext<any>): PostProp
 }
 
 export const listPosts = (): Array<string> => {
-  const posts = JSON.parse(fs.readFileSync('./public/data.json', 'utf8'));
+  const posts = JSON.parse(fs.readFileSync('./contents/data.json', 'utf8'));
   const paths = posts.map((post: PostProps) => {
-    const p = fs.readFileSync('./public/posts/' + post.path, 'utf8');
+    const p = fs.readFileSync('./contents/posts/' + post.path, 'utf8');
     return '/blog/post/' + post.path.split('.')[0];
   })
   return paths;
