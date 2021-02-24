@@ -42,3 +42,5 @@ yarn-error.log*
 .sass-cache
 
 bin/deploy.sh
+
+.next/
