@@ -1,5 +1,4 @@
 import { GetStaticPropsContext } from 'next';
-import path from "path";
 import fs from 'fs';
 let yaml = require('front-matter');
 
