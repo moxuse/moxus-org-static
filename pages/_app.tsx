@@ -5,7 +5,9 @@ import MenuContextProvider from '../context/menu';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-import "../styles/global/Global.scss";
+import 'react-flexbox-grid/dist/react-flexbox-grid.css';
+
+import '../styles/global/Global.scss';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }): JSX.Element => {
   return (
@@ -18,6 +20,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }): JSX.Element => {
         <meta property="og:type" content="website" />
         <meta property="og:description" content="moxus-org" />
         <meta property="og:image" content="" />
+        <link rel="stylesheet" type="text/css" href="/stylesheets/react-flexbox-grid.css"></link>
         <link rel="stylesheet" type="text/css" href="/stylesheets/monokai-sublime.css"></link>
         <script src="/lib/LoadTwitterWidgets.js" defer />
         <script src="/lib/ga.js" defer />

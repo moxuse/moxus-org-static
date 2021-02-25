@@ -10,7 +10,7 @@ export const MenuContext = React.createContext<{
   },
 });
 
-const MenuContextProvider: React.FC<React.Props<{}>> = ({ children }) => {
+const MenuContextProvider: React.FC = ({ children }) => {
   const [state, setState] = React.useState<MenuState>("close");
 
   return (

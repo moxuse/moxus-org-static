@@ -10,15 +10,15 @@ export type PostProps = {
 }
 
 export const getPostContent = ({ params }: GetStaticPropsContext<any>): PostProps => {
-  const p = fs.readFileSync('./contents/posts/' + params.date + '.md', 'utf8');
+  const p = fs.readFileSync('./contents/posts/' + params.id + '.md', 'utf8');
   const matter = yaml(p);
-  console.log('each post', matter);
+  console.log('each post', params.id);
   return {
     // TODO: use layout [blog|work]
     // layout: matter.post, 
-    id: params.date,
+    id: params.id,
     title: matter.attributes.title,
-    path: '/blog/post/' + params.date,
+    path: '/blog/post/' + params.id,
     body: matter.body
   };
 }

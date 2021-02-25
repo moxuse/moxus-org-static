@@ -3,8 +3,8 @@
  */
 
 import React, { Component } from 'react';
-import { Link } from "components/Router";
-import styles from './Thumbnail.css';
+import { Link } from "next/link";
+import styles from './styles.module.css';
 
 export default class Thumbnail extends Component {
   render() {
@@ -12,7 +12,7 @@ export default class Thumbnail extends Component {
     let ex_path = this.props.data.ex_path;
     let path_name = 'post/' + this.props.data.path.substr(0, this.props.data.path.length - 3);
     let body =
-        (<Link to={`${path_name}`}>
+        (<Link href={`${path_name}`}>
           <img src={`../../images/thumb/${this.props.data.thumb}`} alt={this.props.data.title}/>
         </Link>);
     if (ex_path) {
