@@ -43,4 +43,4 @@ yarn-error.log*
 
 bin/deploy.sh
 
-.next
+/.next
