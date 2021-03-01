@@ -6,7 +6,6 @@ import * as  React from 'react';
 import Link from "next/link";
 
 import styles from './styles.module.css';
-import { PostProps } from '../../services/post';
 
 type PagenatorProps = {
   currentPage: number;
@@ -20,8 +19,7 @@ const Pagenator: React.FC<PagenatorProps> = ({ currentPage, dataLength }) => {
   const getPageMax = () => {
     return Math.floor(dataLength / maxVisible);
   }
-  // const currentLocation = window.location.pathname;
-  // console.log(currentLocation);
+
   const max = getPageMax();
   const visiblePage = currentPage + 1;
   const skip = visiblePage - maxVisible;
@@ -44,8 +42,6 @@ const Pagenator: React.FC<PagenatorProps> = ({ currentPage, dataLength }) => {
 
   const next_hiding = (max < visiblePage) ? styles.hiding : '';
   const next_class_name = visiblePage === max ? 'disabled' : '';
-
-  // const notdisplaying = (currentLocation === '/') ? styles.notdisplaying : '';
 
   return (
     <nav className={`${styles.paginator}`}>

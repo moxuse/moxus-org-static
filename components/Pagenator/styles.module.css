@@ -29,6 +29,11 @@
   opacity: 1;
 }
 
+.paginator .pagination .active {
+  cursor: pointer;
+  opacity: 1;
+}
+
 .paginator .pagination .hiding {
   display: none;
 }

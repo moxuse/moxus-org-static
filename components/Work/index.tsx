@@ -1,7 +1,7 @@
 import React from 'react';
 import { WorkPageProps } from '../../services/work';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import Thumbnail from '../Thumbnail'
+import Thumbnail from './Thumbnail'
 
 import styles from './styles.module.css';
 
