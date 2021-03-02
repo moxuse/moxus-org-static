@@ -5,7 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "yarn run build && ./bin/deploy.sh"
+    "deploy": "npm run build && ./bin/deploy.sh"
   },
   "dependencies": {
     "@types/gsap": "^1.20.2",
