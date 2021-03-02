@@ -3,14 +3,14 @@
 DATE=`date +"%Y-%m-%d"`
 PATTERN="date: 2018-01-01"
 REPLACE="date: ${DATE}"
-OUTPUT=../src/posts/${DATE}.md
+OUTPUT=../contents/posts/${DATE}.md
 
-cp ../src/posts/template.md ${OUTPUT}
+cp ../contents/posts/template.md ${OUTPUT}
 
 awk '{sub('/"${PATTERN}"'/,"'"${REPLACE}"'")}{print}' ${OUTPUT} > ${OUTPUT}.tmp
 
 mv ${OUTPUT}.tmp ${OUTPUT}
 
-cat ../src/data.json | jq --arg a ${DATE}.md '[{"path": $a}] + .' > ../src/_data.json 
+cat ../contents/data.json | jq --arg a ${DATE}.md '[{"path": $a}] + .' > ../contents/_data.json 
 
-mv ../src/_data.json ../src/data.json
+mv ../contents/_data.json ../contents/data.json

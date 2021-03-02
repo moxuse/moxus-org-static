@@ -1,0 +1,44 @@
+/**
+ * work.css
+ */
+
+.work {
+  margin-bottom: 80px;
+}
+
+.work h1{
+  margin-top: 120px;
+  margin-bottom: 50px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+  width: 100%;
+}
+
+.grid li {
+  list-style: none;
+}
+
+/* .grid li {
+  width: 33%;
+  list-style: none;
+} */
+
+@media screen and (min-width: 1226px) {
+  .grid li {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 823px) {
+  .work h1{
+    margin-bottom: 50px;
+  }
+
+  .grid li {
+    width: 100%;
+  }
+}
