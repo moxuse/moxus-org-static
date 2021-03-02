@@ -29,3 +29,4 @@ yarn-error.log*
 bin/deploy.sh
 
 .next
+out/
