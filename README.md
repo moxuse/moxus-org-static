@@ -2,8 +2,8 @@ static site for https://moxus.org
 
 ## make new post
 
-  `make post`
+  `/bin new_post.sh`
 
 ## build
 
-  `make build`
+  `npm run build`
