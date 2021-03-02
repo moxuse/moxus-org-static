@@ -5,9 +5,11 @@ import Post from '../../../components/Post';
 import Pagenator from '../../../components/Pagenator';
 import Link from 'next/link';
 
+import styles from './styles.module.css';
+
 const PostPage: React.FC<PageProps> = ({ posts, currentPage, totalPages }): JSX.Element => {
   return (
-    <div>
+    <div className={styles.pages}>
       <h1><Link href="/blog">blog</Link></h1>
       <ul>{
         posts.map(post => {

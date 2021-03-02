@@ -6,7 +6,7 @@ post_id: 1342
 categories:  []
 ---
 
-installation 2012
+### installation 2012
 
 
 [![geomag](/images/project/geomag.jpeg)](/images/project/geomag.jpeg)

@@ -52,9 +52,13 @@
 
 
 .post .content a:link {
- color: #4433cc; 
+ color: #333; 
  text-decoration: none;
 }
-.post .content a:visited { color: #4444cc; }
-.post .content a:hover { color: #6666cc; }
-.post .content a:active { color: #4444cc; }
+.post .content a:visited { color: #333; }
+.post .content a:hover { color: #333; }
+.post .content a:active { color: #333; }
+
+.hide {
+  display: none;
+}

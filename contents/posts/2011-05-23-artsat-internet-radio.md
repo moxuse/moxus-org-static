@@ -6,7 +6,7 @@ post_id: 891
 categories:  []
 ---
 
-generative net radio 2011
+### generative net radio 2011
 
 
 ![](/images/project/asinrdojpg.jpg)
