@@ -6,8 +6,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 import '../styles/global/Global.scss';
-// import 'flexboxgrid2/flexboxgrid2.css';
-// import 'react-flexbox-grid/dist/react-flexbox-grid.css';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }): JSX.Element => {
   return (

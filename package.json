@@ -3,12 +3,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "deploy": "npm run build && ./bin/deploy.sh"
   },
   "dependencies": {
-    "@types/gsap": "^1.20.2",
     "axios": "^0.21.1",
     "front-matter": "^3.0.2",
     "gsap": "^3.6.0",
@@ -19,12 +18,14 @@
     "react-addons-shallow-compare": "^15.6.2",
     "react-dom": "^17.0.1",
     "react-gsap": "^2.2.1",
-    "react-lowlight": "^2.0.0",
-    "react-markdown": "^4.2.2"
+    "react-markdown": "^4.2.2",
+    "react-syntax-highlighter": "^15.4.3"
   },
   "devDependencies": {
+    "@types/gsap": "^1.20.2",
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.2",
+    "@types/react-syntax-highlighter": "^13.5.0",
     "compass": "^0.1.1",
     "compass-mixins": "^0.12.10",
     "eslint": "5.x",

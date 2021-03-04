@@ -22,8 +22,9 @@
  }
  
  ::selection {
-   background: #ffdcd6;
+   background: #e9fff0;
  }
+
  p {
    word-wrap: break-word;
  }
@@ -40,21 +41,28 @@
  }
  
  pre {
-   padding: 5px;
+   padding: 20px !important;
    overflow: auto;
    font-size: 85%;
    line-height: 1.45em;
    background-color: #23241f;
    border-radius: 4px;
  }
+
+ pre ::selection {
+    background: #52565d;
+  }
+
  
  pre code {
    line-height: 2em;
  }
  
  p code {
+   color: #f99;
+   padding: 6px;
    border-radius: 4px;
-   background: #888 !important;
+   background: #333 !important;
  }
  
  #__next {

@@ -8,7 +8,6 @@ import Link from "next/link";
 import styles from './styles.module.css';
 
 const Thumbnail: React.FC<WorkProps> = (props: WorkProps) => {
-  console.log(props)
   let ex_path = props.ex_path;
   let path_name = '';
   let target = '_self';

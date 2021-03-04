@@ -18,8 +18,7 @@ const Post: React.FC<PostPageProps> = (props: PostPageProps) => {
         source={props.post.body}
         escapeHtml={false}
         renderers={{
-          CodeBlock: CodeBlock,
-          Code: CodeBlock
+          code: CodeBlock
         }}
       />
       </div>

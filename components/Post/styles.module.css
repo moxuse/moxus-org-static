@@ -51,13 +51,30 @@
 }
 
 
-.post .content a:link {
+.post .content h1 a:link {
  color: #333; 
  text-decoration: none;
 }
-.post .content a:visited { color: #333; }
-.post .content a:hover { color: #333; }
-.post .content a:active { color: #333; }
+.post .content h1 a:visited { color: #333; }
+.post .content h1 a:hover { color: #333; }
+.post .content h1 a:active { color: #333; }
+
+
+.post .content a:link {
+  font-weight: bolder;
+  color: #2f4ea5;
+  text-decoration: none;
+}
+.post .content　a:visited {
+  color: #2f4ea5;
+}
+.post .content　a:hover {
+  color: #666666;
+  background: #def3c7;
+}
+.post .content　a:active {
+  color: #2f4ea5;
+}
 
 .hide {
   display: none;
