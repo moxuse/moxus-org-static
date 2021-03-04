@@ -13,7 +13,6 @@ interface CodeBlockProps {
 }
 
 const CodeBlock: React.FC<CodeBlockProps> = (props): JSX.Element => {
-  console.log(props)
   return (
     <SyntaxHighlighter
       language={props.language || "javascript"} 
