@@ -15,7 +15,11 @@ interface CodeBlockProps {
 const CodeBlock: React.FC<CodeBlockProps> = (props): JSX.Element => {
   console.log(props)
   return (
-    <SyntaxHighlighter language={props.language || "javascript"} useInlineStyles={props.inline} style={agate}>
+    <SyntaxHighlighter
+      language={props.language || "javascript"} 
+      useInlineStyles={props.inline} 
+      style={agate}
+    >
       {props.value}
     </SyntaxHighlighter>
   );
