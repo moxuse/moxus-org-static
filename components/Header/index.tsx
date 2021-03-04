@@ -14,7 +14,7 @@ const Header: React.FC = (props) => {
     setState(state === 'open' ? 'close' : 'open');
   };
 
-   const isOpen = state === 'open' ? 'open' : '';
+   const openClassName = state === 'open' ? 'open' : '';
 
     return (
       <div className={styles.header}>
@@ -25,7 +25,7 @@ const Header: React.FC = (props) => {
           </h1>
           <div className={styles.menu_btn_wrap}>
             <div
-              className={`menu_btn btn12 ${isOpen}`}
+              className={`menu_btn btn12 ${openClassName}`}
               onClick={onMenuClick}
             >
               <div className={`icon`}></div>

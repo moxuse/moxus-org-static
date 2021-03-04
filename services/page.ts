@@ -21,8 +21,8 @@ export const getPostContent = ({ params }: GetStaticPropsContext<any>): PageProp
     if (id ===  undefined) {
       break;
     }
-    const p = fs.readFileSync('./contents/posts/' + id.path, 'utf8');
-    const matter = yaml(p)
+    const data = fs.readFileSync('./contents/posts/' + id.path, 'utf8');
+    const matter = yaml(data)
     const postData = {
       id: id.path.split('.')[0],
       title: matter.attributes.title,

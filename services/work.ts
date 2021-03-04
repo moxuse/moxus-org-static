@@ -16,7 +16,7 @@ export type WorkPageProps = {
 
 export const getWorklist = (): WorkPageProps => {
   const posts = JSON.parse(fs.readFileSync('./contents/project_data.json', 'utf8'));
-  const w = posts.map((item: WorkProps) => {
+  const works = posts.map((item: WorkProps) => {
     const path = item.path || '';
     const ex_path = item.ex_path || '';
     return {
@@ -26,5 +26,5 @@ export const getWorklist = (): WorkPageProps => {
       ex_path: ex_path
     } as WorkProps;
   });
-  return { works: w }
+  return { works: works }
 }
