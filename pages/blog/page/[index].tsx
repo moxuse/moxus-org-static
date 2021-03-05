@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 
 const PostPage: React.FC<PageProps> = ({ posts, currentPage, totalPages }): JSX.Element => {
   return (
-    <div className={styles.pages}>
+    <div className={styles.pages} key={`page-${currentPage}`}>
       <h1><Link href="/blog">blog</Link></h1>
       <ul>{
         posts.map(post => {
