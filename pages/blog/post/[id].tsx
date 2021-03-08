@@ -6,7 +6,7 @@ import Post from '../../../components/Post';
 const PostPage: React.VFC<PostProps> = (props): JSX.Element => {
     return (
       <div>
-        <Post post={props}></Post>
+        <Post {...props}></Post>
       </div>
     )
 }

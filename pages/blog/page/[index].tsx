@@ -15,7 +15,7 @@ const PostPage: React.VFC<PageProps> = ({ posts, currentPage, totalPages }): JSX
         posts.map(post => {
           return(
             <li key={'posts-' + post.id}>
-              { <Post post={post}></Post> }
+              { <Post {...post}></Post> }
             </li>)
         }) 
       }</ul>
