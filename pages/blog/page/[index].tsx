@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 import styles from './styles.module.css';
 
-const PostPage: React.FC<PageProps> = ({ posts, currentPage, totalPages }): JSX.Element => {
+const PostPage: React.VFC<PageProps> = ({ posts, currentPage, totalPages }): JSX.Element => {
   return (
     <div className={styles.pages} key={`page-${currentPage}`}>
       <h1><Link href="/blog">blog</Link></h1>
@@ -33,7 +33,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) =>  {
   if (context === undefined || props.posts.length === 0) {
     throw new Error("page/[imdex].tsx > getStaticProps: Args are invalid.");
   }
-  return { props: props }
+  return { props };
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

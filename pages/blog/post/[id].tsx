@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps<PostProps> = async (context) =>  {
   if (!props.title || typeof props.title !== "string") {
     throw new Error("post/[date].tsx > getStaticProps: Args are invalid.");
   }
-  return { props: props };
+  return { props };
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
