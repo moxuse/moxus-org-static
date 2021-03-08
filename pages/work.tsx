@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next';
 import { WorkPageProps, getWorklist } from '../services/work';
 import Work from '../components/Work';
 
-const WorkPage: React.FC<WorkPageProps> = (props): JSX.Element => {
+const WorkPage: React.VFC<WorkPageProps> = (props): JSX.Element => {
   return (
     <div>
       { Work(props) }
@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps<WorkPageProps> = async () =>  {
   if (!props || props.works.length <= 0) {
     throw new Error("post/[date].tsx > getStaticProps: Args are invalid.");
   }
-  return { props: { works: props.works } };
+  return { props };
 }
 
 

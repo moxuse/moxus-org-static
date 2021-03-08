@@ -3,24 +3,20 @@ import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import { PostProps, getPostContent, listPosts } from '../../../services/post';
 import Post from '../../../components/Post';
 
-export type PostPageProps = {
-  post: PostProps;
-};
-
-const PostPage: React.FC<PostPageProps> = (props): JSX.Element => {
+const PostPage: React.VFC<PostProps> = (props): JSX.Element => {
     return (
       <div>
-        <Post post={props.post}></Post>
+        <Post post={props}></Post>
       </div>
     )
 }
 
-export const getStaticProps: GetStaticProps<PostPageProps> = async (context) =>  {
+export const getStaticProps: GetStaticProps<PostProps> = async (context) =>  {
   const props = await getPostContent(context);
   if (!props.title || typeof props.title !== "string") {
     throw new Error("post/[date].tsx > getStaticProps: Args are invalid.");
   }
-  return { props: { post: props } };
+  return { props: props };
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
