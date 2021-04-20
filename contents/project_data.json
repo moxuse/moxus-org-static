@@ -1,5 +1,20 @@
 [
   {
+    "title": "Kusabi",
+    "thumb": "kusabi-thumb.jpg",
+    "path": "2021-04-20-kusabi.md"
+  },
+  {
+    "title": "tca 18",
+    "thumb": "tca-thumb.jpg",
+    "path": "2021-04-20-tca.md"
+  },
+  {
+    "title": "enum",
+    "thumb": "enum-thumb.jpg",
+    "path": "2021-04-20-enum.md"
+  },
+  {
     "title": "tidal-unity",
     "thumb": "tidal-unity-thumb.jpg",
     "path": "2017-04-26-tidal-unity.md"

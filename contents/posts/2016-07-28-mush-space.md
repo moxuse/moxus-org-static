@@ -13,7 +13,7 @@ music album from [CONDITIONAL label](http://shop.conditional.club/) at UK.
 
 ![](/images/project/mush-space.jpg)
 
-Cassette tape / digital data both is on band camp page: [CON004 MUSH SPACE MOXUS](http://shop.conditional.club/album/mush-space)
+Cassette tape / digital data both is on bandcamp page: [CON004 MUSH SPACE MOXUS](http://shop.conditional.club/album/mush-space)
 
 #### TRACKLIST:
 
