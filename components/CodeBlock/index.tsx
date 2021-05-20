@@ -7,7 +7,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { agate } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 interface CodeBlockProps {
-  value: string
+  // children?: string
   language?: string
   inline? : boolean
 }
@@ -19,7 +19,7 @@ const CodeBlock: React.FC<CodeBlockProps> = (props): JSX.Element => {
       useInlineStyles={props.inline} 
       style={agate}
     >
-      {props.value}
+      {props.children}
     </SyntaxHighlighter>
   );
 }
