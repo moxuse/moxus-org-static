@@ -1,3 +1,17 @@
 {
-  "extends": "react-app"
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype",
+    "react"
+  ],
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    }
+  },
+  "extends": [
+    "react-app",
+    "plugin:react/recommended",
+    "plugin:flowtype/recommended"
+  ]
 }
