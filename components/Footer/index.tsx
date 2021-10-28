@@ -1,3 +1,4 @@
+// @flow
 import styles from './styles.module.css';
 
 const Footer: React.FC = (props) => {

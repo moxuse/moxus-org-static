@@ -1,5 +1,6 @@
+// @flow
 import * as React from 'react';
-import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import { PostProps, getPostContent, listPosts } from '../../../services/post';
 import Post from '../../../components/Post';
 

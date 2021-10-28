@@ -1,3 +1,4 @@
+// @flow
 import { GetStaticPropsContext } from 'next';
 import fs from 'fs';
 let yaml = require('front-matter');

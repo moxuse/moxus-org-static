@@ -1,7 +1,7 @@
 import { GetStaticPropsContext } from 'next';
 import { PostProps } from './post';
 import fs from 'fs';
-import { C_NUMBER_MODE } from 'highlight.js';
+
 let yaml = require('front-matter');
 
 const CHUNK_NUM = 5;

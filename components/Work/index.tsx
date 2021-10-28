@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { WorkPageProps } from '../../services/work';
 import Thumbnail from './Thumbnail/index';
@@ -6,7 +7,7 @@ import styles from './styles.module.css';
 
 const Work: React.VFC<WorkPageProps> = ({ works }): JSX.Element => {
   const makeGrid = () => {
-    let col: Array<JSX.Element> = [];
+    // let col: Array<JSX.Element> = [];s
     return works.map((item, i) => {
       return (<li key={item.title}><Thumbnail {...item} /></li>);
     });

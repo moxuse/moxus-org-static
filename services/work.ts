@@ -1,7 +1,8 @@
-import { GetStaticPropsContext } from 'next';
+// @flow
+// import { GetStaticPropsContext } from 'next';
 import fs from 'fs';
-import WorkPage from '../pages/work';
-let yaml = require('front-matter');
+// import WorkPage from '../pages/work';s
+// let yaml = require('front-matter');
 
 export type WorkProps = {
   title: string;
@@ -11,7 +12,7 @@ export type WorkProps = {
 }
 
 export type WorkPageProps = {
- works :Array<WorkProps>;
+  works: Array<WorkProps>;
 }
 
 export const getWorklist = (): WorkPageProps => {
@@ -24,7 +25,7 @@ export const getWorklist = (): WorkPageProps => {
       thumb: item.thumb,
       path: path,
       ex_path: ex_path
-    } as WorkProps;
+    };
   });
   return { works: works }
 }

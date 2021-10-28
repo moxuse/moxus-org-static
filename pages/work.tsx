@@ -1,3 +1,4 @@
+// @flow
 import { GetStaticProps } from 'next';
 import { WorkPageProps, getWorklist } from '../services/work';
 import Work from '../components/Work';

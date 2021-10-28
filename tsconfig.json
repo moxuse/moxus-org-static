@@ -21,12 +21,14 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", "components/Work/index.js"
+    "**/*.tsx",
+    "components/Work/index.js"
   ],
   "exclude": [
     "node_modules"

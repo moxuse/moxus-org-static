@@ -1,8 +1,9 @@
+// @flow
 /**
  * menu.jsx
  */
 import * as React from "react";
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from "next/link";
 import { PlayState, Tween } from 'react-gsap';
 
@@ -29,7 +30,7 @@ const Menu: React.FC = (props) => {
       setOpacity(0);
     }
     setPlaying(true);
-  })
+  },[visibiiity, opacity, state])
 
   const visibleStyle = (state === 'close' && !visibiiity) ? styles.hide : '';
 

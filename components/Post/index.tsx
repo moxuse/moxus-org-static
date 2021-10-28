@@ -1,3 +1,4 @@
+// @flow
 import * as React from 'react'
 import Link from 'next/link';
 import MD from 'react-markdown';

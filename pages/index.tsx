@@ -1,3 +1,5 @@
+// @flow
+import React from 'react'
 import { NextPage } from "next";
 
 type IndexPageProps = string;

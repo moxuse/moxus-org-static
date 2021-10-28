@@ -1,5 +1,6 @@
+// @flow
 import * as React from 'react';
-import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import { PageProps, getPostContent, listPages } from '../../../services/page';
 import Post from '../../../components/Post';
 import Pagenator from '../../../components/Pagenator';
