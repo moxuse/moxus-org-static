@@ -12,6 +12,7 @@
   "extends": [
     "react-app",
     "plugin:react/recommended",
-    "plugin:flowtype/recommended"
+    "plugin:flowtype/recommended",
+    "plugin:react-hooks/recommended"
   ]
 }

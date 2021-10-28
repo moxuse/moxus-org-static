@@ -6,7 +6,7 @@ import Menu from '.';
 describe('Menu', () => {
   it('render correctly', async () => {
     render(<Menu />);
-
     expect(await screen.getByText('work')).toBeVisible();
+    expect(await screen.findAllByRole('listitem')).toBeTruthy();
   });
 })
