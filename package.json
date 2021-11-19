@@ -3,10 +3,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run test && next build && next export",
+    "build": "next build && next export",
     "start": "next start",
     "deploy": "npm run build && ./bin/deploy.sh",
-    "test": "jest"
+    "postbuild": "npm test",
+    "test": "jest --silent"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",

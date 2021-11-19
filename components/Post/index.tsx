@@ -11,12 +11,12 @@ import styles from './styles.module.css';
 
 const Post: React.FC<PostProps> = (props) => {
   const showDateSection = (props.id.split('-').length < 4);
-  const dateStyleNam = showDateSection ? '' : styles.hide;
+  const dateStyleName = showDateSection ? '' : styles.hide;
   return (
     <div className={styles.post}>
       <div className={styles.content}>
       <h1><Link href={props.path}>{props.title}</Link></h1>
-      <h3 className={dateStyleNam}>- {props.id}</h3>
+      <h3 className={dateStyleName}>- {props.id}</h3>
       <MD
         rehypePlugins={[rehypeRaw, rehypeSanitize]}
         components={{
