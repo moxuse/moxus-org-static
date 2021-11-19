@@ -13,7 +13,7 @@ const Thumbnail: React.FC<WorkProps> = (props: WorkProps) => {
   let path_name = '';
   let target = '_self';
   if (props.path) {
-    path_name = '/blog/post/' + props.path.substr(0, props.path.length - 3);
+    path_name = '/blog/post/' + props.path.substring(0, props.path.length - 3);
   }
   let body =
       (<Link href={`${path_name}`}>

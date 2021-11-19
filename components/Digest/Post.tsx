@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import Link from "next/Link";
 import { PostProps } from '../../services/post';
 
 import styles from "./styles.module.css";
@@ -11,8 +12,16 @@ type PostPropsType = {
 const Post: React.FC<PostPropsType> = ({ posts }): JSX.Element => {
   const makeGrid = () => {
     return posts.map(item => {
-      return (<li key={ item.title }>
-        <h5>{ item.title }</h5>
+      let path_name = '';
+      
+      if (item.path) {
+        path_name = item.path;
+      }
+
+      return (<li key={item.title}>
+        <Link href={`${path_name}`}>
+          <h5>{ item.title }</h5>
+        </Link>
       </li>);
     });
   };
@@ -20,7 +29,7 @@ const Post: React.FC<PostPropsType> = ({ posts }): JSX.Element => {
   return (
     <div className={styles.post}>
       <div>
-        <h4>{ `[recent posts]` }</h4>
+        <h4>{ `[recent post]` }</h4>
       </div>
       <ul>
         { makeGrid() }
