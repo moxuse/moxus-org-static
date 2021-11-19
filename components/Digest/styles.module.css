@@ -1,0 +1,36 @@
+.digest {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+}
+
+.digest ul {
+  list-style: none;
+  padding: 0;
+}
+
+.digest li {
+  padding: 0;
+}
+
+.left {
+  /* background-color: aqua; */
+  width: clamp( 315px, 50%, 100%);
+}
+
+.right {
+  /* background-color: magenta; */
+  width: clamp( 315px, 50%, 100%);
+}
+
+.work {
+  
+}
+
+.work img {
+  max-width: clamp( 315px, 490px, 100%);
+}

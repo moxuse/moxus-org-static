@@ -29,3 +29,8 @@ export const getWorklist = (): WorkPageProps => {
   });
   return { works: works }
 }
+
+export const getWorklistForDigest = (): WorkPageProps => {
+  const list = getWorklist();
+  return { works: list.works.slice(0, 3)}
+}

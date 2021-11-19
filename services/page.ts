@@ -1,6 +1,7 @@
 import { GetStaticPropsContext } from 'next';
 import { PostProps } from './post';
 import fs from 'fs';
+import { ParsedUrlQuery } from 'node:querystring';
 
 let yaml = require('front-matter');
 
@@ -9,13 +10,18 @@ const CHUNK_NUM = 5;
 export type PageProps = {
   posts: Array<PostProps>;
   currentPage: number;
-  totalPages: number;  
-}
+  totalPages: number;
+};
 
-export const getPostContent = ({ params }: GetStaticPropsContext<any>): PageProps => {
+interface PagePropsParsedUrlQuery extends ParsedUrlQuery {
+  index: string;
+};
+
+export const getPostContent= ({ params }: GetStaticPropsContext<PagePropsParsedUrlQuery>) => {
   const posts = JSON.parse(fs.readFileSync('./contents/data.json', 'utf8'));
+  if (!params) { throw new Error('cant read post props at getPostContent.') };
   let chunkPost: Array<PostProps> = [];
-  const startPage = (params.index - 1) * CHUNK_NUM;
+  const startPage = ((+params.index) - 1) * CHUNK_NUM;
   for (let i = 0; i < CHUNK_NUM; i++) {
     const id = posts[startPage + i];
     if (id ===  undefined) {
@@ -28,12 +34,12 @@ export const getPostContent = ({ params }: GetStaticPropsContext<any>): PageProp
       title: matter.attributes.title,
       path: '/blog/post/' + id.path.split('.')[0],
       body: matter.body
-    } as PostProps;
+    };
     chunkPost.push(postData);
   }
   return { 
     posts: chunkPost, 
-    currentPage: params.index - 1, 
+    currentPage: (+params.index) - 1, 
     totalPages: posts.length 
   } as PageProps;
 }
@@ -46,4 +52,8 @@ export const listPages = (): Array<string> => {
     paths.push('/blog/page/' + i);
   }
   return paths;
+}
+
+export const getPostContentForDigest = () => {
+  return getPostContent({ params: { index: '1' } });
 }

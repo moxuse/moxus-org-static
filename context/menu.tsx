@@ -1,3 +1,4 @@
+// @flow
 import * as React from "react";
 
 export const MenuContext = React.createContext<{
@@ -10,7 +11,7 @@ export const MenuContext = React.createContext<{
   },
 });
 
-const MenuContextProvider: React.FC = ({ children }) => {
+const MenuContextProvider: React.FC = ({ children }: any) => {
   const [state, setState] = React.useState<MenuState>("close");
 
   return (
