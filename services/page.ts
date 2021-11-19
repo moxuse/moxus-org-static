@@ -1,7 +1,6 @@
 import { GetStaticPropsContext } from 'next';
 import { PostProps } from './post';
 import fs from 'fs';
-import { ParsedUrlQuery } from 'node:querystring';
 
 let yaml = require('front-matter');
 
@@ -13,11 +12,7 @@ export type PageProps = {
   totalPages: number;
 };
 
-interface PagePropsParsedUrlQuery extends ParsedUrlQuery {
-  index: string;
-};
-
-export const getPostContent= ({ params }: GetStaticPropsContext<PagePropsParsedUrlQuery>) => {
+export const getPostContent= ({ params }: GetStaticPropsContext<any>) => {
   const posts = JSON.parse(fs.readFileSync('./contents/data.json', 'utf8'));
   if (!params) { throw new Error('cant read post props at getPostContent.') };
   let chunkPost: Array<PostProps> = [];

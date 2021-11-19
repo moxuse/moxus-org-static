@@ -1,7 +1,6 @@
 // @flow
 import { GetStaticPropsContext } from 'next';
 import fs from 'fs';
-import { ParsedUrlQuery } from 'node:querystring';
 let yaml = require('front-matter');
 
 export type PostProps = {
@@ -11,11 +10,7 @@ export type PostProps = {
   body: string;
 }
 
-interface PostPropsParsedUrlQuery extends ParsedUrlQuery {
-  index: string;
-};
-
-export const getPostContent = ({ params }: GetStaticPropsContext<PostPropsParsedUrlQuery>): PostProps => {
+export const getPostContent = ({ params }: GetStaticPropsContext<any>): PostProps => {
   if (!params) { throw new Error('couldn`t get params at getPostContent.') }
   const data = fs.readFileSync('./contents/posts/' + params.id + '.md', 'utf8');
   const matter = yaml(data);
