@@ -3,7 +3,7 @@ import * as React from 'react'
 import Link from 'next/link';
 import MD from 'react-markdown';
 import rehypeRaw from 'rehype-raw'
-import rehypeSanitize from 'rehype-sanitize'
+// import rehypeSanitize from 'rehype-sanitize'
 import { PostProps } from '../../services/post';
 import CodeBlock from '../CodeBlock';
 
@@ -18,7 +18,7 @@ const Post: React.FC<PostProps> = (props) => {
       <h1><Link href={props.path}>{props.title}</Link></h1>
       <h3 className={dateStyleName}>- {props.id}</h3>
       <MD
-        rehypePlugins={[rehypeRaw, rehypeSanitize]}
+        rehypePlugins={[rehypeRaw]}
         components={{
           code: (props) => <CodeBlock {...props} />
         }}
