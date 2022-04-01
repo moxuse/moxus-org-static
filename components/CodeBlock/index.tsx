@@ -2,10 +2,9 @@
 /**
  * CodeBlock.jsx
  */
-
  import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
- import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
- import docco from 'react-syntax-highlighter/dist/esm/styles/hljs/docco';
+ import js from 'react-syntax-highlighter/dist/esm/languages/prism/javascript';
+ import tomorrow from 'react-syntax-highlighter/dist/esm/styles/prism/tomorrow';
  
  SyntaxHighlighter.registerLanguage('javascript', js);
 
@@ -20,7 +19,7 @@ const CodeBlock: React.FC<CodeBlockProps> = (props): JSX.Element => {
     <SyntaxHighlighter
       language={props.language || "javascript"} 
       useInlineStyles={props.inline} 
-      style={docco}
+      style={tomorrow}
     >
       {props.children}
     </SyntaxHighlighter>

@@ -1,4 +1,6 @@
-module.exports = {
+const withTM = require("next-transpile-modules")(["react-syntax-highlighter"]);
+
+const config = {
   async redirects() {
     return [
       {
@@ -9,3 +11,5 @@ module.exports = {
     ]
   }
 }
+
+module.exports = withTM(config);
