@@ -3,8 +3,8 @@
  * CodeBlock.jsx
  */
 
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { agate } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 interface CodeBlockProps {
   // children?: string
@@ -17,7 +17,7 @@ const CodeBlock: React.FC<CodeBlockProps> = (props): JSX.Element => {
     <SyntaxHighlighter
       language={props.language || "javascript"} 
       useInlineStyles={props.inline} 
-      style={agate}
+      style={tomorrow}
     >
       {props.children}
     </SyntaxHighlighter>

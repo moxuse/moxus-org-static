@@ -65,14 +65,14 @@
   color: #2f4ea5;
   text-decoration: none;
 }
-.post .content　a:visited {
+.post .content a:visited {
   color: #2f4ea5;
 }
-.post .content　a:hover {
+.post .content a:hover {
   color: #666666;
   background: #def3c7;
 }
-.post .content　a:active {
+.post .content a:active {
   color: #2f4ea5;
 }
 
