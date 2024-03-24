@@ -48,5 +48,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           key: ${{ secrets.KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}          
-          source: "./out"
+          source: "./out/**"
           target: ${{ secrets.TARGET }}
