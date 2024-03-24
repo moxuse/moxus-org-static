@@ -50,3 +50,5 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}          
           source: "out/*"
           target: ${{ secrets.TARGET }}
+          strip_components: 1
+
