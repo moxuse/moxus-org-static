@@ -4,6 +4,10 @@ static site for https://moxus.org
 
   `./bin new_post.sh`
 
+## development
+
+  `npm run dev`
+
 ## build
 
   `npm run build`
