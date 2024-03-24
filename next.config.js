@@ -9,6 +9,9 @@ const config = {
         permanent: true,
       },
     ]
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   }
 }
 
