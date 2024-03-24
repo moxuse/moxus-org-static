@@ -4,7 +4,7 @@ static site for https://moxus.org
 
   `./bin new_post.sh`
 
-## development
+## run at local
 
   `npm run dev`
 
