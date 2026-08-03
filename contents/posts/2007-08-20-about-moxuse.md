@@ -13,6 +13,8 @@ A.K.A. moxus
 
 変更点12
 
+変更点２
+
 main site: 
 [http://moxuse.org/](https://moxuse.org)
 flickr: 
