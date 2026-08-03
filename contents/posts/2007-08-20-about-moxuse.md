@@ -11,7 +11,7 @@ categories:
 Koichiro Mori
 A.K.A. moxus
 
-変更点4
+変更点12
 
 main site: 
 [http://moxuse.org/](https://moxuse.org)
