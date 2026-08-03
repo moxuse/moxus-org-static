@@ -11,6 +11,8 @@ categories:
 Koichiro Mori
 A.K.A. moxus
 
+変更点１
+
 main site: 
 [http://moxuse.org/](https://moxuse.org)
 flickr: 
